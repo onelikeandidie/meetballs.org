@@ -28,7 +28,13 @@
         <p class="font-bold">
             <span>Next meet:</span>
             {{-- Format: Wednesday 20th, 19:00 --}}
-            <span>{{ \Carbon\Carbon::parse('next wednesday 19:00')->format('l jS, H:i') }}</span>
+            {{-- Check if today is wednesday --}}
+            @if(\Carbon\Carbon::now()->isWednesday())
+                @php($nextMeet = \Carbon\Carbon::parse('today 19:00'))
+            @else
+                @php($nextMeet = \Carbon\Carbon::parse('next wednesday 19:00'))
+            @endif
+            <span>{{ $nextMeet->format('l jS, H:i') }}</span>
         </p>
     </div>
     <div class="container mx-auto my-8">
