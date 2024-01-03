@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <div class="flex items-center justify-center min-h-96 py-28 text-neutral-800 bg-white">
+    <div class="flex items-center justify-center min-h-96 py-28 bg-neutral-800 text-white">
         <div class="font-mono">
             <h1 class="text-6xl mb-8">
                 <span>&lt;</span>Meetballs<span>/&gt;</span>
