@@ -27,6 +27,11 @@ with the project added to the list in the above format.
     IKEA 29-2023 meetup _#session_ _#rust_
   - [Simple Math in Nodejs accepting Pull Requests](https://github.com/Unisergius/simple-math-api-exercise) - A simple
     math API in Nodejs for the FCC IKEA 29-2023 meetup to get familiar with accepting pull requests _#session_
+  - [Test driven development in Python](https://github.com/Unisergius/fcc-python-tdd-session) - An intro to Red Green Refactor concept of Test Driven Development in Python _#tests_ _#python_
+  - [Git and Gitpod](https://github.com/Unisergius/git-fcc-ikea-2023) - Small intro to git, git features, pull, push, pull requests and intro to Gitpod _#git_ _#gitpod_ _#pullrequests_
+  - [Typescript](https://github.com/Unisergius/typescript-fccikea-4-2023) - Session about why Typescript over Javascript, pros cons and think upons. _#typescript_ 
+  - [Rust, Rustlings and Rust frameworks](https://github.com/Unisergius/rust-7-april-fcc-ikea) - Session about Rust and Rustlings. Small intro to Rust frameworks _#rust_ 
+  - [Flutter Installation Party](https://github.com/Unisergius/flutter-fccikea-3-2023) - Session from Flutter Faro about Flutter, Google's framework for desktop, web and mobile apps. _#flutter_ _#dart_
 - [Meetballs.org](https://meetballs.org) - The Meetballs.org website _#website_
     [Repository](https://github.com/onelikeandidie/meetballs.org)
 
