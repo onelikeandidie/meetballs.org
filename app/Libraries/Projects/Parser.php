@@ -60,6 +60,7 @@ class Parser
         // Tag the projects
         foreach ($projects as $project) {
             $project->tags = self::extractTags($project->description);
+            $project->featured = $project->tags->contains('featured');
         }
         // // Extract types
         // foreach ($projects as $project) {
@@ -108,7 +109,7 @@ class Parser
 
     private static function extractType(string $link): string
     {
-        $type = 'unkown';
+        $type = 'unknown';
         // If the link is just the protocol and the domain, it's a website
         $domain = Str::after($link, '://');
         if (Str::contains($link, ['http://', 'https://']) && !Str::contains($domain, '/')) {
