@@ -19,8 +19,13 @@ class HomeController extends Controller
                 return Project::all();
             });
         }
+
+        $projectsCollection = collect($projects);
+        $featuredProject = $projectsCollection->firstWhere('featured', true);
+
         return view('home', [
-            'projects' => $projects,
+            'projects' => $projectsCollection->where('featured', false),
+            'featuredProject' => $featuredProject ?? null,
         ]);
     }
 }
