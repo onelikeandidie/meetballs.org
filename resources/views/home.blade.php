@@ -36,9 +36,11 @@
             @endif
             <span>{{ $nextMeet->format('l jS, H:i') }}</span>
         </p>
-        <div class="flex items-center justify-center p-4">
-            <x-featured-project :featured_project="$featuredProject"></x-featured-project>
-        </div>
+        @if ($featuredProject)
+            <div class="flex items-center justify-center p-4">
+                <x-featured-project :featured_project="$featuredProject"></x-featured-project>
+            </div>
+        @endif
     </div>
     <div class="container mx-auto my-8">
         <h2 class="text-3xl font-bold text-center mb-8">
@@ -46,7 +48,7 @@
         </h2>
         <div class="flex flex-wrap">
             @foreach($projects as $project)
-                <x-project-card :project=$project></x-project-card>
+                <x-project-card :project="$project"></x-project-card>
             @endforeach
         </div>
     </div>

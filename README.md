@@ -22,7 +22,7 @@ with the project added to the list in the above format.
 
 - Sessions
   - [Algorithm Potpourri](https://www.facebook.com/events/1080560462988839) - Learn, discuss and implement essential
-    algorithms you'll forget as soon as you land a job. _#session_ _#featured_
+    algorithms you'll forget as soon as you land a job. _#session_
   - [Docker Container Introduction](https://github.com/Unisergius/containers-fccikea-2-2023) - A Docker container
     introduction for the FCC IKEA 2-2023 meetup _#session_
   - [Rust Introduction 29-2023](https://github.com/onelikeandidie/fccikea-29-2023-rust) - A Rust introduction for the FCC
