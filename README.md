@@ -21,10 +21,14 @@ with the project added to the list in the above format.
 ## Projects
 
 - Sessions
+  - [Embedded Systems Workshop](https://github.com/zinixyt/meetballs-embedded-workshop) - Diving
+    into the basics of working with ESP32 and Arduino embedded systems using an emulator _#session_
+    _#embedded_ _#arduino_ _#esp32_
   - [Algorithm Potpourri](https://www.facebook.com/events/1080560462988839) - Learn, discuss and implement essential
     algorithms you'll forget as soon as you land a job. _#session_
+    _#algorithms_ _#penandpaper_
   - [Docker Container Introduction](https://github.com/Unisergius/containers-fccikea-2-2023) - A Docker container
-    introduction for the FCC IKEA 2-2023 meetup _#session_
+    introduction for the FCC IKEA 2-2023 meetup _#session_ _#docker_
   - [Rust Introduction 29-2023](https://github.com/onelikeandidie/fccikea-29-2023-rust) - A Rust introduction for the FCC
     IKEA 29-2023 meetup _#session_ _#rust_
   - [Simple Math in Nodejs accepting Pull Requests](https://github.com/Unisergius/simple-math-api-exercise) - A simple
