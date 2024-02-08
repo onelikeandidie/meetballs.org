@@ -21,7 +21,7 @@ with the project added to the list in the above format.
 ## Projects
 
 - Sessions
-  - [Prompt Engineering](https://www.facebook.com/events/928880408889510) - Make your AI do what you want _#session_ _#ai_ _#copilot_ _#chatgpt_ _#featured_
+  - [Prompt Engineering](https://www.facebook.com/events/928880408889510) - Make your AI do what you want _#session_ _#ai_ _#copilot_ _#chatgpt_ _#noguide_
   - [Embedded Systems Workshop](https://github.com/zinixyt/meetballs-embedded-workshop) - Diving
     into the basics of working with ESP32 and Arduino embedded systems using an emulator _#session_
     _#embedded_ _#arduino_ _#esp32_
