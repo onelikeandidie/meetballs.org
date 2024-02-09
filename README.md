@@ -5,6 +5,39 @@ some of the projects worked on during the [Meetballs](https://meetballs.org)
 developer meetups. The projects can be the script from the host of the meetup,
 or a project that was worked on during the meetup.
 
+## Development
+
+The codebase is based on Rocket.rs, Tera templating and Tailwind CSS. To make
+sure you have all the required components install Rust from
+[rust-lang.org](https://rust-lang.org) and Node.js (along with npm)
+[nodejs.org](https://nodejs.org), then run:
+
+```bash
+# Install tailwind
+npm install
+```
+
+To compile styles and run the site locally run the following:
+
+```bash
+# Automatically runs tailwind using the build.rs file
+cargo run
+```
+
+To make sure the styles get compiled whenever you change a template file, you
+will have to install `cargo-watch` to add the the ability for cargo to watch
+for changes and recompile.
+
+```bash
+# Install globaly
+cargo install --locked cargo-watch
+# Watch for changes and recompile styles
+cargo watch
+# Watch for changes and recompile whole site
+# -x makes cargo run the following command whenever something changes
+cargo watch -x run
+```
+
 ## Submitting a project to list on the website
 
 These projects are actually parsed from the following section of this README
@@ -13,6 +46,8 @@ file. in the following format:
 ```markdown
 - [Project Name](https://project.url) - Project description
 - [Repo Name](https://github.com/meetballs/repo-name) - Repo description
+- [Another Project](https://example.com) - Another project description
+  _#project-tag_ [Another link](https://random.dog)
 ```
 
 If you would like to add a project to the list, please submit a pull request

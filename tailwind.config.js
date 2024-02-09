@@ -1,18 +1,16 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-    ],
-    theme: {
-        extend: {
-            fontFamily: {
-                mono: ["JetBrains Mono", "sans-serif"],
-                sans: ["Inter", "sans-serif"],
-            },
-        },
+module.exports = {
+    purge: {
+        content: [
+            "templates/**/*.html.tera"
+        ],
     },
-    plugins: [],
-}
-
+    theme: {
+        // Your theme configuration here
+    },
+    variants: {
+        // Your variants configuration here
+    },
+    plugins: [
+        // Your plugins configuration here
+    ],
+};
