@@ -1,5 +1,6 @@
 {# Import macros #}
 {% import "components/icons" as icons %}
+<!DOCTYPE html>
 <html>
 
 <head>
