@@ -4,8 +4,8 @@
 
 <head>
     <title>{% block title %}Meetballs.org{% endblock title %} {% block subtitle %}{% endblock %}</title>
-    <link rel="stylesheet" href="public/main.css">
-    <link rel="icon" href="public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/public/main.css">
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
 </head>
 
 <body class="antialiased">
