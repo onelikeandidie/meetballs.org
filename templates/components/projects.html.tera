@@ -1,0 +1,71 @@
+{% import "components/icons" as icons %}
+
+{% macro card(project) %}
+<div class="flex-shrink basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 p-2">
+    <div class="rounded-lg border border-neutral-400 p-2">
+        <a class="text-xl font-bold text-blue-600 hover:underline"
+            href="{% if project.links %}{{ project.links[0].url }}{% endif %}">
+            {{ project.name }}
+        </a>
+        <p class="text-sm text-neutral-600">
+            {% for tag in project.tags %}
+                <span>{{ tag }}</span>
+                {% if not loop.last %}
+                    <span class="rounded-full inline-block align-middle bg-neutral-600 w-1 h-1"></span>
+                {% endif %}
+            {% endfor %}
+        </p>
+        <p class="text-sm text-neutral-800">
+            {{ project.description }}
+        </p>
+        <div class="flex items-center justify-end gap-2 m-2">
+            {% for link in project.links %}
+                <a href="{{ link.url }}" class="text-neutral-600 hover:text-neutral-800">
+                    {% if link.icon == "website" %}
+                        {{ icons::globe_alt(class="inline-block w-5 h-5") }}
+                    {% endif %}
+                    {% if link.icon == "github" %}
+                        {{ icons::github(class="inline-block w-5 h-5") }}
+                    {% endif %}
+                    {% if link.icon == "unknown" %}
+                        {{ icons::arrow_top_right_on_square(class="inline-block w-5 h-5") }}
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endmacro card %}
+
+{% macro featured(project) %}
+<div class="max-w-sm w-full lg:max-w-lg lg:flex text-left">
+    {% if project.image %}
+        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            style="background-image: url('{{ project.image }}')" title="featured project image">
+        </div>
+    {% endif %}
+    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white
+        rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal ">
+        <div>
+            <p class="text-sm text-gray-600 mb-2">
+                {{ icons::cloudmeatballs(class="inline-block w-5 h-5") }}
+                {% for tag in project.tags %}
+                    <span>{{ tag }}</span>
+                    {% if not loop.last %}
+                        <span class="rounded-full inline-block align-middle bg-neutral-600 w-1 h-1"></span>
+                    {% endif %}
+                {% endfor %}
+            </p>
+            <div class="text-gray-900 font-bold text-xl mb-2">
+                <a class="text-xl font-bold text-blue-600 hover:underline"
+                    href="{% if project.links %}{{ project.links[0].url }}{% endif %}">
+                    {{ project.name }}
+                </a>
+            </div>
+            <p class="text-gray-700 text-base mb-2">
+                {{ project.description }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endmacro %}

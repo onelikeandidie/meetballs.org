@@ -1,0 +1,33 @@
+{# Import macros #}
+{% import "components/icons" as icons %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}Meetballs.org{% endblock title %} {% block subtitle %}{% endblock %}</title>
+    <link rel="stylesheet" href="/public/main.css">
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="antialiased">
+    {% block content %}{% endblock content %}
+    {% block footer %}
+    <footer class="bg-neutral-800 text-neutral-400 p-4">
+        <div class="flex flex-col items-start justify-start gap-2 container mx-auto">
+            <a href="https://discord.gg/XdCJctvybK" class="hover:text-neutral-200 align-middle">
+                {{ icons::discord(class="inline-block h-5 w-5") }}
+                Join the GeekSessions Discord
+            </a>
+            <p>
+                Source available on
+                <a href="https://github.com/onelikeandidie/meetballs.org" class="hover:text-neutral-200">
+                    {{ icons::github(class="inline-block h-5 w-5") }}
+                    GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+    {% endblock footer %}
+</body>
+
+</html>

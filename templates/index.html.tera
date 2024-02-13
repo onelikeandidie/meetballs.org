@@ -1,0 +1,57 @@
+{# Import macros #}
+{% import "components/icons" as icons %}
+{% import "components/projects" as projects %}
+
+{% extends 'layout/base' %}
+{% block content %}
+    <div class="flex items-center justify-center min-h-96 py-28 bg-neutral-800 text-white">
+        <div class="font-mono">
+            <h1 class="text-4xl sm:text-6xl mb-8">
+                <span>&lt;</span>Meetballs<span>/&gt;</span>
+            </h1>
+            <p class="uppercase text-xl">
+                Premium meet
+                <br />
+                from local
+                <br />
+                tech suppliers
+                <br />
+                <br />
+                Brewed with
+                <br />
+                geek love
+                {{ icons::heart(class="h-6 w-6 inline-block") }}
+            </p>
+        </div>
+    </div>
+    <div class="bg-amber-800 text-white p-4 text-center text-xl">
+        <p>
+            Wednesdays at IKEA Loulé
+        </p>
+        {# Time till next meet #}
+        {# Meetings are on Wednesdays from 19:00 to 21:00 #}
+        <p class="font-bold">
+            <span>Next meet:</span>
+            {# Format: Wednesday 20th, 19:00 #}
+            {# Check if today is wednesday #}
+            <span>{{ next_meetup }}</span>
+        </p>
+        {% if featured_project %}
+            <div class="flex items-center justify-center p-4">
+                {# Featured Project #}
+                {{ projects::featured(project=featured_project) }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="container mx-auto my-8">
+        <h2 class="text-3xl font-bold text-center mb-8">
+            Projects
+        </h2>
+        <div class="flex flex-wrap">
+            {# Loop through projects #}
+            {% for project in projects %}
+                {{ projects::card(project=project) }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
