@@ -56,8 +56,9 @@ with the project added to the list in the above format.
 ## Projects
 
 - Sessions
+  - [Flutter Installation Party](https://www.facebook.com/events/451186503902037/) - Flutter Installation Party (for the First Timers) _#flutter_ _#mobile_ _#uikit_ _#featured_
   - [Algorithms II - Data Structures](https://www.facebook.com/events/907229467549946) - Learn more about algorithms
-    and how to handle big amounts of data _#algorithms_ _#penandpaper_ _#featured_
+    and how to handle big amounts of data _#algorithms_ _#penandpaper_
   - [Prompt Engineering](https://www.facebook.com/events/928880408889510) - Make your AI do what you want _#session_ _#ai_ _#copilot_ _#chatgpt_ _#noguide_
   - [Embedded Systems Workshop](https://github.com/zinixyt/meetballs-embedded-workshop) - Diving
     into the basics of working with ESP32 and Arduino embedded systems using an emulator _#session_
