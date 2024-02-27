@@ -164,7 +164,7 @@ fn extract_image(description: &mut String) -> String {
 fn extract_links(description: &mut String) -> Vec<ProjectLink> {
     let mut tmp_description = description.clone();
     let mut links = vec![];
-    while tmp_description.contains(['[', ']', '(', ')']) {
+    while tmp_description.contains(['[', ']']) && tmp_description.contains(['(', ')']) {
         // Extract link name
         let start_link_name = tmp_description.find('[').unwrap();
         let end_link_name = tmp_description.find(']').unwrap();
