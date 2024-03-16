@@ -57,7 +57,7 @@ with the project added to the list in the above format.
 
 - Sessions
   - [Free Day](https://fb.me/e/3t1jLwT6V) - Free day, bring something to the table, any projects ou wanna showcase, do some networking and talk about other events
-    _#wildcard_ _#featured_
+    _#wildcard_
   - [Flutter Installation Party](https://www.facebook.com/events/451186503902037/) - Flutter Installation Party (for the First Timers) _#flutter_ _#mobile_ _#uikit_
   - [Algorithms II - Data Structures](https://www.facebook.com/events/907229467549946) - Learn more about algorithms
     and how to handle big amounts of data _#algorithms_ _#penandpaper_
