@@ -56,8 +56,10 @@ with the project added to the list in the above format.
 ## Projects
 
 - Sessions
+  - [Langchain with Python and ChatGPT](https://www.facebook.com/events/3756642677927262) - Automating your programing from initial prompt to
+    full application _#langchain_ _#python_ _#featured_
   - [Quasar + Supabase + You](https://fb.me/e/3jkI9ydYI) - Introduction to a VueJS framework for creating websites, mobile apps and desktop apps
-    all from the same codebase _#node_ _#vuejs_ _#featured_
+    all from the same codebase _#node_ _#vuejs_
   - [Free Day](https://fb.me/e/3t1jLwT6V) - Free day, bring something to the table, any projects ou wanna showcase, do some networking and talk about other events
     _#wildcard_
   - [Flutter Installation Party](https://www.facebook.com/events/451186503902037/) - Flutter Installation Party (for the First Timers) _#flutter_ _#mobile_ _#uikit_
