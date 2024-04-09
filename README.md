@@ -56,8 +56,10 @@ with the project added to the list in the above format.
 ## Projects
 
 - Sessions
+  - [InfoSec](https://www.facebook.com/events/3775335509421509/) - An introduction to Information Security,
+    how to protect your information from reaching third-parties _#infosec_ _#session_ _#featured_
   - [Langchain with Python and ChatGPT](https://www.facebook.com/events/3756642677927262) - Automating your programing from initial prompt to
-    full application _#langchain_ _#python_ _#featured_
+    full application _#langchain_ _#python_
   - [Quasar + Supabase + You](https://fb.me/e/3jkI9ydYI) - Introduction to a VueJS framework for creating websites, mobile apps and desktop apps
     all from the same codebase _#node_ _#vuejs_
   - [Free Day](https://fb.me/e/3t1jLwT6V) - Free day, bring something to the table, any projects ou wanna showcase, do some networking and talk about other events
