@@ -57,7 +57,7 @@ with the project added to the list in the above format.
 
 - Sessions
   - [InfoSec](https://www.facebook.com/events/3775335509421509/) - An introduction to Information Security,
-    how to protect your information from reaching third-parties _#infosec_ _#session_ _#featured_
+    how to protect your information from reaching third-parties _#infosec_ _#session_
   - [Langchain with Python and ChatGPT](https://www.facebook.com/events/3756642677927262) - Automating your programing from initial prompt to
     full application _#langchain_ _#python_
   - [Quasar + Supabase + You](https://fb.me/e/3jkI9ydYI) - Introduction to a VueJS framework for creating websites, mobile apps and desktop apps
