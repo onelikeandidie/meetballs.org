@@ -7,6 +7,10 @@
     <title>{% block title %}Meetballs.org{% endblock title %} {% block subtitle %}{% endblock %}</title>
     <link rel="stylesheet" href="/public/main.css">
     <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meetballs.org is a community of developers, designers, and other tech enthusiasts who meet to discuss and learn about technology.">
+    <meta name="keywords" content="meetballs, meetballs.org, tech, technology, community, discord, developers, designers, programmers, coders, geeks, nerds">
+    <meta charset="utf-8">
 </head>
 
 <body class="antialiased">
