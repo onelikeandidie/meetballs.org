@@ -56,6 +56,8 @@ with the project added to the list in the above format.
 ## Projects
 
 - Sessions
+  - [Test Driven Development with João Cabrita](https://fb.me/e/4qrMfGPPL) - An
+    introduction to Test Driven Development _#session_ _#test-driven_ _#featured_
   - [InfoSec](https://www.facebook.com/events/3775335509421509/) - An introduction to Information Security,
     how to protect your information from reaching third-parties _#infosec_ _#session_
   - [Langchain with Python and ChatGPT](https://www.facebook.com/events/3756642677927262) - Automating your programing from initial prompt to
