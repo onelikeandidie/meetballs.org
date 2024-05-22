@@ -56,6 +56,8 @@ with the project added to the list in the above format.
 ## Projects
 
 - Sessions
+  - [Python Streamlit Dashboard Kickstarter](https://github.com/Py-ualg/geeksessions-streamlit) - Getting started
+    creating a simple cloud dashboard with python and streamlit.io _#session_ _#python_ _#featured_
   - [Test Driven Development with João Cabrita](https://fb.me/e/4qrMfGPPL) - An
     introduction to Test Driven Development _#session_ _#test-driven_
   - [InfoSec](https://www.facebook.com/events/3775335509421509/) - An introduction to Information Security,
