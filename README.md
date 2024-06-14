@@ -58,12 +58,15 @@ with the project added to the list in the above format.
 - Sessions
   - [Infosec](https://www.meetup.com/geek-sessions-faro/events/301637182) - Talk with the nerdiest of the nerds to learn how cybersecurity
      works and what you can do to defend yourself. _#infosec_ _#session_ _#featured_
+  - [Simple RAG for GitHub issues using HuggingFace.com Zephyr](https://www.meetup.com/geek-sessions-faro/events/301574946/?isFirstPublish=true) - RAG is a popular approach to address the issue of a powerful LLM not being aware of specific content due to said content not being in its training data, or hallucinating even when it has seen it before. Such specific content may be proprietary, sensitive, or, as in this example, recent and updated often.
   - [Python Streamlit Dashboard Kickstarter](https://github.com/Py-ualg/geeksessions-streamlit) - Getting started
     creating a simple cloud dashboard with python and streamlit.io _#session_ _#python_
   - [Test Driven Development with João Cabrita](https://fb.me/e/4qrMfGPPL) - An
     introduction to Test Driven Development _#session_ _#test-driven_
-  - [InfoSec](https://www.facebook.com/events/3775335509421509/) - An introduction to Information Security,
-    how to protect your information from reaching third-parties _#infosec_ _#session_
+  - [InfoSec](https://www.facebook.com/events/773869947826615/?ref=newsfeed) - Join us for more Infosec adventures. Talk with the nerdiest of the nerds to learn how cybersecurity works and what you can do to defend yourself. _#infosec_ _#session_
+  - [Free Day](https://www.facebook.com/events/407939325275462/?ref=newsfeed) - Free day, bring something to the table, any projects ou wanna showcase, do some networking and talk about other events _#wildcard_
+  - [Automating pull request reviewing with ChatGPT and webhooks by IS AT Lda's Pedro](https://www.facebook.com/events/1529449120945397/?ref=newsfeed) - This session we'll be looking into how we can use webhooks and LLMs and how combining those can be done to automate workflows, like reviewing pull requests. _#session_ _#chatgpt#_
+  - [InfoSec](https://www.facebook.com/events/3775335509421509/) - An introduction to Information Security, how to protect your information from reaching third-parties _#infosec_ _#session_
   - [Langchain with Python and ChatGPT](https://www.facebook.com/events/3756642677927262) - Automating your programing from initial prompt to
     full application _#langchain_ _#python_
   - [Quasar + Supabase + You](https://fb.me/e/3jkI9ydYI) - Introduction to a VueJS framework for creating websites, mobile apps and desktop apps
