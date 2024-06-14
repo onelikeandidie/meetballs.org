@@ -26,7 +26,7 @@
     </div>
     <div class="bg-amber-800 text-white p-4 text-center text-xl">
         <p>
-            Wednesdays at IKEA Loulé
+            Wednesdays at 19:00, IKEA Loulé
         </p>
         {# Time till next meet #}
         {# Meetings are on Wednesdays from 19:00 to 21:00 #}
