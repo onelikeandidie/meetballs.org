@@ -57,7 +57,7 @@ with the project added to the list in the above format.
 
 - Sessions
   - [Infosec](https://www.meetup.com/geek-sessions-faro/events/301637182) - Talk with the nerdiest of the nerds to learn how cybersecurity
-     works and what you can do to defend yourself. _#infosec_ _#session_ _#featured_
+     works and what you can do to defend yourself. _#infosec_ _#session_
   - [Simple RAG for GitHub issues using HuggingFace.com Zephyr](https://www.meetup.com/geek-sessions-faro/events/301574946/?isFirstPublish=true) - RAG is a popular approach to address the issue of a powerful LLM not being aware of specific content due to said content not being in its training data, or hallucinating even when it has seen it before. Such specific content may be proprietary, sensitive, or, as in this example, recent and updated often.
   - [Python Streamlit Dashboard Kickstarter](https://github.com/Py-ualg/geeksessions-streamlit) - Getting started
     creating a simple cloud dashboard with python and streamlit.io _#session_ _#python_
