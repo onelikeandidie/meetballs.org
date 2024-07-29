@@ -56,6 +56,10 @@ with the project added to the list in the above format.
 ## Projects
 
 - Sessions
+  - [Infosec](https://www.meetup.com/geek-sessions-faro/events/302500733) - Discussion about infosec
+    and some capture the flag _#infosec_ _#session_ _#featured_
+  - [Introduction to Phaser.js](https://github.com/Unisergius/phaser-flappybird-clone) - We make a
+    flappy bird clone all in Phaser.js _#javascript_ _#session_
   - [Infosec](https://www.meetup.com/geek-sessions-faro/events/301637182) - Talk with the nerdiest of the nerds to learn how cybersecurity
      works and what you can do to defend yourself. _#infosec_ _#session_
   - [Simple RAG for GitHub issues using HuggingFace.com Zephyr](https://www.meetup.com/geek-sessions-faro/events/301574946/?isFirstPublish=true) - RAG is a popular approach to address the issue of a powerful LLM not being aware of specific content due to said content not being in its training data, or hallucinating even when it has seen it before. Such specific content may be proprietary, sensitive, or, as in this example, recent and updated often.
