@@ -1,0 +1,60 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="status-bar"
+        }
+    }
+    tab name="Tutorial" focus=true {
+        pane command="bat" {
+            name "Editor Tutorial"
+            args "./editor/README.md" "--wrap=never"
+        }
+    }
+    tab name="Editor" {
+        pane edit="." {
+            name "Editor"
+        }
+    }
+    tab name="Server" {
+        pane split_direction="vertical" {
+            pane command="php" {
+                name "Laravel Server"
+                args "artisan" "serve"
+            }
+            pane command="npm" {
+                name "Vite"
+                args "run" "dev"
+            }
+        }
+        pane split_direction="vertical" {
+            pane command="php" {
+                name "Laravel Queue"
+                args "artisan" "queue:listen"
+            }
+            pane command="php" {
+                name "Laravel Schedule"
+                args "artisan" "schedule:run"
+            }
+        }
+    }
+    tab name="Logs" {
+        pane command="tail" {
+            name "Laravel Log"
+            args "-f" "-n100" "storage/logs/laravel.log"
+        }
+    }
+    tab name="Terminal"{
+        pane command="$SHELL" {
+            name "Shell"
+        }
+    }
+    tab name="Version Control"{
+        pane command="gitui" {
+            name "Git"
+        }
+    }
+}
