@@ -11,10 +11,10 @@ class HomeController extends Controller
     {
         // Next meetup is on wednesday at 7pm
         $now = now();
-        if ($now->isThursday()) {
+        if ($now->isWednesday()) {
             $next_meetup = $now->setTime(19, 0, 0);
         } else {
-            $next_meetup = $now->next('Thursday')->setTime(19, 0, 0);
+            $next_meetup = $now->next('Wednesday')->setTime(19, 0, 0);
         }
         $projects = Project::all();
         return view('home', [
