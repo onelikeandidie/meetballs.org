@@ -1,5 +1,22 @@
 @extends('layouts.app')
 
+@section('meta')
+    <meta name="title" content="Meetballs - Premium meet from local tech suppliers">
+    <meta name="description" content="A community of tech enthusiasts that meet weekly to share their projects and ideas.">
+    <meta name="keywords" content="meetballs, tech, community, projects, ideas">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+
+    @if($featured_project)
+        <meta property="image" content="{{ route('project.image', $featured_project) }}">
+        <meta property="og:image" content="{{ route('project.image', $featured_project) }}">
+    @endif
+@endsection
+
+@section('nav')
+@endsection
+
 @section('content')
     <div class="flex items-center justify-center min-h-96 py-28 bg-neutral-800 text-white">
         <div class="font-mono">

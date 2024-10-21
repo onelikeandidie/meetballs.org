@@ -17,10 +17,22 @@
         }
     </style>
 
+    @yield('meta')
+
     @vite('resources/css/app.css')
 </head>
 
 <body class="antialiased">
+@section('nav')
+    <nav class="bg-neutral-800 text-neutral-400 p-4">
+        <div class="flex items-center justify-start gap-2 container mx-auto">
+            <a href="/" class="">
+                <x-heroicon-o-home class="w-6 h-6 inline-block"/>
+            </a>
+        </div>
+    </nav>
+@show
+
 @yield('content')
 
 @section('footer')
