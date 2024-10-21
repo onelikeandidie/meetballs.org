@@ -12,7 +12,12 @@
             {{ $project->name }}
         </a>
         <p class="text-sm text-neutral-800">
-            {{ $project->description }}
+            {{ \Illuminate\Support\Str::limit($project->description, 160) }}
+            @if(strlen($project->description) > 160)
+                <a href="{{ route('project.show', $project) }}" class="text-blue-600 hover:underline">
+                    {{ __("read more") }}
+                </a>
+            @endif
         </p>
         <div class="flex items-center mt-2">
             @if($project->host)
