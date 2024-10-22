@@ -23,13 +23,20 @@ class ProjectController extends Controller
         if (!$featuredProject) {
             abort(404);
         }
-        return view('project', [
-            'project' => $featuredProject,
-        ]);
+        return $this->show($featuredProject);
     }
 
     public function image(Project $project)
     {
         return response()->file($project->generateImage());
+    }
+
+    public function featuredImage()
+    {
+        $featuredProject = Project::all()->first(fn($project) => $project->tags->contains('featured'));
+        if (!$featuredProject) {
+            abort(404);
+        }
+        return $this->image($featuredProject);
     }
 }
