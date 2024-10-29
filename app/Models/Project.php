@@ -80,21 +80,30 @@ class Project extends Model
                 $font->align('left');
                 $font->valign('top');
                 $font->wrap(360);
+                $font->lineHeight(1.6);
             });
-            // Add the project description
-            $image->text(Str::limit($this->description, 80), 20, 84, function ($font) {
-                $font->file(resource_path('fonts/InterDisplay-Medium.ttf'));
-                $font->size(18);
-                $font->color('#000000aa');
-                $font->align('left');
-                $font->valign('top');
-                $font->wrap(360);
-                $font->lineHeight(1.5);
-            });
+            $descriptionStart = 84;
+            if (strlen($this->name) > 16) {
+                $descriptionStart += 36;
+            }
+            // If the title is too big (typically 32 characters), then there is no space for the description
+            if (strlen($this->name) <= 32) {
+                // Add the project description
+                $image->text(Str::limit($this->description, 80), 20, $descriptionStart, function ($font) {
+                    $font->file(resource_path('fonts/InterDisplay-Medium.ttf'));
+                    $font->size(18);
+                    $font->color('#000000aa');
+                    $font->align('left');
+                    $font->valign('top');
+                    $font->wrap(360);
+                    $font->lineHeight(1.5);
+                });
+            }
             // Add the tags
             $tags = $this->tags;
             $startX = 20;
-            $startY = 148;
+            // $startY = $descriptionStart + 64;
+            $startY = 200 - 24;
             foreach ($tags as $tag) {
                 if ($tag == "featured") {
                     continue;
