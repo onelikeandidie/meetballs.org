@@ -1,9 +1,9 @@
 <div class="max-w-sm w-full lg:max-w-lg lg:flex text-left">
-    <div class="rounded-lg bg-white text-neutral-900 p-4 flex flex-col justify-between leading-normal ">
+    <div class="rounded-lg bg-neutral-800 text-white p-4 flex flex-col justify-between leading-normal space-y-4">
         @if($project->host)
             <div class="flex-wrap">
-                <x-avatar :host="$project->host">
-                    <span class="text-neutral-700">{{ __("is hosting") }}</span>
+                <x-avatar :size="'w-12 h-12'" :host="$project->host">
+                    <span class="text-neutral-200">{{ __("is hosting") }}</span>
                 </x-avatar>
             </div>
         @else
@@ -19,19 +19,20 @@
                 {{ $project->name }}
             </a>
         </div>
-        <p class="text-neutral-700 text-base mb-2">
+        <p class="text-neutral-200 text-base mb-2">
             {{ $project->description }}
+            <a href="{{ route('project.show', $project) }}" class="text-neutral-400 hover:text-white">
+                    {{ __("details") }}
+                <x-heroicon-o-arrow-top-right-on-square class="w-4 h-4 inline-block"/>
+            </a>
         </p>
-        <p class="text-sm text-neutral-600 mb-2">
+        <p class="text-sm text-neutral-400 mb-2">
             @foreach($project->tags as $index => $tag)
-                <x-tag :name="$tag"/>
+                <x-tag class="mb-1 mr-1"
+                       :name="$tag"/>
             @endforeach
         </p>
         <div class="flex items-center mt-2">
-            <a href="{{ route('project.show', $project) }}" class="text-neutral-600 hover:text-neutral-800">
-                {{ __("details") }}
-                <x-heroicon-o-arrow-top-right-on-square class="w-4 h-4 inline-block"/>
-            </a>
             <div class="flex flex-1 items-center justify-end gap-2 m-2">
                 @foreach($project->links as $index => $link)
                     <a href="{{ $link->url }}" class="text-neutral-600 hover:text-neutral-800">

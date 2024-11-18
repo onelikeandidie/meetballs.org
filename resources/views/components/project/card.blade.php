@@ -1,11 +1,10 @@
 <div {{ $attributes->merge(['class' => 'p-2']) }}>
-    <div class="rounded-lg shadow bg-neutral-800  p-2">
+    <div class="rounded-lg shadow bg-neutral-800 p-4 space-y-4">
         <div class="text-sm text-neutral-400 my-1">
-            <div class="inline-block">
-                @foreach($project->tags as $index => $tag)
-                    <x-tag :name="$tag"/>
-                @endforeach
-            </div>
+            @foreach($project->tags as $index => $tag)
+                <x-tag class="mb-1 mr-1"
+                       :name="$tag"/>
+            @endforeach
         </div>
         <a class="text-xl font-bold text-blue-600 hover:underline"
            href="@if($project->links){{ $project->links->first()?->url }}@endif">
@@ -29,7 +28,7 @@
                         {{ __("Hosted by") }}
                     </p>
                     <x-avatar class="text-neutral-200"
-                        :host="$project->host"/>
+                              :host="$project->host"/>
                 </div>
             @endif
             <div class="flex flex-1 items-center justify-end gap-2 m-2">
