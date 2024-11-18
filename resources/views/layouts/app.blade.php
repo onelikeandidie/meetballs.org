@@ -22,7 +22,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="antialiased">
+<body class="antialiased @yield('body-class')">
 @section('nav')
     <nav class="bg-neutral-800 text-neutral-400 p-4">
         <div class="flex items-center justify-start gap-2 container mx-auto">
