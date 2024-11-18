@@ -2,7 +2,8 @@
 
 @section('meta')
     <meta name="title" content="Meetballs - Premium meet from local tech suppliers">
-    <meta name="description" content="A community of tech enthusiasts that meet weekly to share their projects and ideas.">
+    <meta name="description"
+          content="A community of tech enthusiasts that meet weekly to share their projects and ideas.">
     <meta name="keywords" content="meetballs, tech, community, projects, ideas">
 
     <meta property="og:type" content="website">
@@ -26,7 +27,7 @@
         <div class="flex items-end font-mono">
             <div class="">
                 <h1 class="text-4xl sm:text-6xl mb-8">
-                    <span>&lt;</span>Meetballs<span>/&gt;</span>
+                    <span class="text-amber-800">&lt;</span>Meetballs<span class="text-amber-800">/&gt;</span>
                 </h1>
                 <p class="uppercase text-xl">
                     Premium meet
@@ -43,29 +44,29 @@
                 </p>
             </div>
             <p class="bg-amber-800 text-white p-4 font-bold">
-                    Wednesdays @ 19:00, IKEA Loulé
+                Wednesdays @ 19:00, IKEA Loulé
             </p>
         </div>
     </div>
-    <div class="bg-gradient-to-b from-amber-800 to-transparent text-white p-4 text-center text-xl">
-        <p class="font-bold">
-            <span>Next meet:</span>
-            @if($next_meetup->isToday() && $next_meetup->isFuture())
-                <span>{{ __("Today") }}</span>
-                <span>{{ $next_meetup->diffForHumans() }}</span>
-                ({{ $next_meetup->format('H:i') }})
-            @else
-                <span>{{ $next_meetup->format('F jS') }}</span>
-            @endif
-        </p>
-        @if($featured_project)
+    @if($featured_project)
+        <div class="bg-gradient-to-b from-amber-800 to-transparent text-white p-4 text-center text-xl">
+            <p class="font-bold">
+                <span>Next meet:</span>
+                @if($next_meetup->isToday() && $next_meetup->isFuture())
+                    <span>{{ __("Today") }}</span>
+                    <span>{{ $next_meetup->diffForHumans() }}</span>
+                    ({{ $next_meetup->format('H:i') }})
+                @else
+                    <span>{{ $next_meetup->format('F jS') }}</span>
+                @endif
+            </p>
             <div class="flex items-center justify-center p-4">
                 <x-project.featured :project="$featured_project"/>
             </div>
-        @endif
-    </div>
-    @if($featured_project)
-
+        </div>
+    @else
+        <div class="bg-amber-800 container mx-auto h-1">
+        </div>
     @endif
     <div class="container mx-auto my-8 text-white">
         <h2 class="text-3xl font-bold text-center mb-8">
