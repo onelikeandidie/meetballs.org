@@ -20,15 +20,24 @@
     @yield('meta')
 
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 
 <body class="antialiased @yield('body-class')">
 @section('nav')
-    <nav class="bg-neutral-800 text-neutral-400 p-4">
-        <div class="flex items-center justify-start gap-2 container mx-auto">
-            <a href="/" class="">
-                <x-heroicon-o-home class="w-6 h-6 inline-block"/>
-            </a>
+    <nav
+        class="flex items-center justify-around h-12 md:h-16 bg-white text-gray-900 sticky left-0 top-0 right-0 transition-[height] duration-500">
+        <div class="flex gap-2">
+            {{-- Probably put some links in here --}}
+        </div>
+        <a class="text-center flex-1 relative"
+           href="{{ route('home') }}">
+            <h1 class="text-2xl md:text-2xl font-display duration-750">
+                <span class="text-amber-800">&lt;</span>Meetballs<span class="text-amber-800">/&gt;</span>
+            </h1>
+        </a>
+        <div class="flex gap-2 justify-end">
+            {{-- Probably put some links in here --}}
         </div>
     </nav>
 @show
@@ -52,7 +61,5 @@
         </div>
     </footer>
 @show
-</body>
-@vite('resources/js/app.js')
 </body>
 </html>

@@ -1,3 +1,31 @@
-@import '/vendor/filament/filament/resources/css/theme.css';
+/*@import '/vendor/filament/filament/resources/css/theme.css';*/
+/*@config '../../../../vendor/filament/filament/tailwind.config.preset.js';*/
+@import 'tailwindcss';
 
-@config 'tailwind.config.js';
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+
+@layer base {
+    :root.dark {
+        color-scheme: dark;
+    }
+
+    /* When scrolling to validation error, do not hide element behind the top bar */
+    [data-field-wrapper] {
+        scroll-margin-top: 8rem;
+    }
+}
+
+@theme {
+    --color-custom: #fffff;
+    --color-danger: #fffff;
+    --color-gray: #fffff;
+    --color-info: #fffff;
+    --color-primary: #fffff;
+    --color-success: #fffff;
+    --color-warning: #fffff;
+}
+
+@source '../../../../app/Filament/**/*.php';
+@source '../../../../resources/views/filament/**/*.blade.php';
+@source '../../../../vendor/filament/**/*.blade.php';
