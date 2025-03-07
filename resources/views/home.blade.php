@@ -58,8 +58,8 @@
     {{-- Show off the next meetup --}}
     <div class="p-8 bg-white text-black z-10">
         <div class="mx-auto container relative">
-            <span class="h-6 w-6 absolute left-8 top-0 bg-gray-900 rounded-full inline-block"></span>
-            <div class="w-1 absolute left-8 top-8 -bottom-8 mx-2.5 bg-gray-600 rounded-t"></div>
+            <span class="hidden md:inline-block h-6 w-6 absolute left-8 top-0 bg-gray-900 rounded-full"></span>
+            <div class="hidden md:block w-1 absolute left-8 top-8 -bottom-8 mx-2.5 bg-gray-600 rounded-t"></div>
             <div class="flex flex-col items-center justify-center gap-4">
                 @if($next_project)
                     <div x-data='{ eventDate: new Date(@json($next_project->event_date)) }'>
@@ -78,7 +78,8 @@
                             {{ $next_project->event_date->format('d-m-Y H:i') }}
                         </p>
                     </div>
-                    <x-project.poster :project="$next_project"/>
+                    <x-project.poster class="w-full md:w-2/3 lg:w-1/2"
+                        :project="$next_project"/>
                 @else
                     <h2 class="text-3xl font-bold">{{ __("No Meetups Scheduled") }}</h2>
                     <p class="text-lg">{{ __("Check back later for more meetups.") }}</p>
