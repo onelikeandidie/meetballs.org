@@ -27,9 +27,15 @@ class HomeController extends Controller
         $months = $projects->groupBy(function (Project $project) {
             return $project->event_date?->format('F Y') ?? 'Unsorted';
         });
+
+        $next_project = Project::query()
+            ->where('event_date', '>=', now())
+            ->orderBy('event_date')
+            ->first();
         return view('home', [
             'months' => $months,
             'next_meetup' => $next_meetup,
+            'next_project' => $next_project,
         ]);
     }
 }

@@ -57,7 +57,7 @@ class ProjectResource extends Resource
                     ->required(),
                 Forms\Components\DateTimePicker::make('event_date')
                     ->label('Event Date')
-                    ->default(now())
+                    ->default(now()->setTime(19, 0, 0))
                     ->required(),
                 Forms\Components\TagsInput::make('tags'),
                 Forms\Components\Repeater::make('links')

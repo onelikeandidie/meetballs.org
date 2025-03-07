@@ -30,7 +30,7 @@ class Project extends Model
 
     protected $casts = [
         'tags' => 'collection',
-        'event_date' => 'date',
+        'event_date' => 'datetime',
     ];
 
     public function host()
