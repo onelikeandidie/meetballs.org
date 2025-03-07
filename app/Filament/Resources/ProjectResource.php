@@ -55,6 +55,10 @@ class ProjectResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->label('Description')
                     ->required(),
+                Forms\Components\DateTimePicker::make('event_date')
+                    ->label('Event Date')
+                    ->default(now()->setTime(19, 0, 0))
+                    ->required(),
                 Forms\Components\TagsInput::make('tags'),
                 Forms\Components\Repeater::make('links')
                     ->relationship('links')
@@ -102,6 +106,10 @@ class ProjectResource extends Resource
                     ->badge()
                     ->icon(fn ($state) => (Tag::where('name', $state)->first()?->icon) ?? 'heroicon-o-tag')
                     ->color(fn ($state) => Tag::where('name', $state)->first()?->toColorsArray() ?? 'gray')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('event_date')
+                    ->label('Event Date')
+                    ->dateTime()
                     ->searchable(),
             ])
             ->filters([

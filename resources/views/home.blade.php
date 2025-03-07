@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('meta')
-    <meta name="title" content="Meetballs - Premium meet from local tech suppliers">
+    <meta name="title" content="Meetballs - A GeekSessions meetup in Algarve">
     <meta name="description"
-          content="A community of tech enthusiasts that meet weekly to share their projects and ideas.">
+          content="A community of tech enthusiasts that meet weekly to share their projects and ideas. Part of the GeekSessions network.">
     <meta name="keywords" content="meetballs, tech, community, projects, ideas">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
 
-    @if($featured_project)
-        <meta property="image" content="{{ route('project.image', $featured_project) }}">
-        <meta property="og:image" content="{{ route('project.image', $featured_project) }}">
+    @if($next_project)
+        <meta property="image" content="{{ route('project.image', $next_project) }}">
+        <meta property="og:image" content="{{ route('project.image', $next_project) }}">
     @endif
 @endsection
 
@@ -19,64 +19,97 @@
 @endsection
 
 @section('body-class')
-    bg-neutral-900 text-white
+    bg-gray-900 bg-dots-gray-700 bg-repeat bg-[length:40px_40px] text-white
 @endsection
 
 @section('content')
-    <div class="flex items-center justify-center min-h-96 py-28 bg-transparent text-white">
-        <div class="flex items-end font-mono">
-            <div class="">
-                <h1 class="text-4xl sm:text-6xl mb-8">
-                    <span class="text-amber-800">&lt;</span>Meetballs<span class="text-amber-800">/&gt;</span>
-                </h1>
-                <p class="uppercase text-xl">
-                    Premium meet
-                    <br/>
-                    from local
-                    <br/>
-                    tech suppliers
-                    <br/>
-                    <br/>
-                    Brewed with
-                    <br/>
-                    geek love
-                    <x-heroicon-o-heart class="h-6 w-6 inline-block"/>
-                </p>
-            </div>
-            <p class="bg-amber-800 text-white p-4 font-bold">
-                Wednesdays @ 19:00, IKEA Loulé
+    <nav
+        class="flex items-center justify-around h-48 md:h-72 bg-white text-gray-900 fixed left-0 top-0 right-0 transition-[height] duration-500 z-20"
+        x-bind:class="{'h-48 md:h-72': isAtTop, 'h-12 md:h-16': !isAtTop}"
+        x-data="{
+            isAtTop: true,
+            init() {
+                window.addEventListener('scroll', () => {
+                    this.isAtTop = window.scrollY < 100;
+                });
+            }
+        }">
+        <div class="flex gap-2 transition-[opacity]" x-bind:class="{'opacity-100': isAtTop, 'opacity-0': !isAtTop}">
+            {{-- Probably put some links in here --}}
+        </div>
+        <a class="text-center flex-1 relative"
+           href="{{ route('home') }}">
+            <h1 class="text-4xl md:text-8xl font-display transition-[font-size] duration-750"
+                x-bind:class="{'text-4xl md:text-8xl': isAtTop, 'text-2xl md:text-2xl': !isAtTop}">
+                <span class="text-amber-800">&lt;</span>Meetballs<span class="text-amber-800">/&gt;</span>
+            </h1>
+            <p class="text-lg md:text-2xl font-display transition-[opacity] duration-750 absolute w-full"
+               x-bind:class="{'opacity-100': isAtTop, 'opacity-0': !isAtTop}">
+                A GeekSessions meetup in Algarve
             </p>
+        </a>
+        <div class="flex gap-2 transition-[opacity] justify-end"
+             x-bind:class="{'opacity-100': isAtTop, 'opacity-0': !isAtTop}">
+            {{-- Probably put some links in here --}}
+        </div>
+    </nav>
+    <div class="h-48 md:h-72 bg-white">
+    </div>
+    {{-- Show off the next meetup --}}
+    <div class="p-8 bg-white text-black z-10">
+        <div class="mx-auto container relative">
+            <span class="h-6 w-6 absolute left-8 top-0 bg-gray-900 rounded-full inline-block"></span>
+            <div class="w-1 absolute left-8 top-8 -bottom-8 mx-2.5 bg-gray-600 rounded-t"></div>
+            <div class="flex flex-col items-center justify-center gap-4">
+                @if($next_project)
+                    <div x-data='{ eventDate: new Date(@json($next_project->event_date)) }'>
+                        <h2 class="text-3xl font-bold">
+                            {{ __("Next Meetup") }}
+                            <noscript>
+                                <span>
+                                    {{ $next_project->event_date->diffForHumans() }}
+                                </span>
+                            </noscript>
+                            <span x-text="window.utils.formatHumanDuration((new Date() - eventDate) / 1000)">
+                                {{ $next_project->event_date->diffForHumans() }}
+                            </span>
+                        </h2>
+                        <p class="text-center" x-text="eventDate.toLocaleString()">
+                            {{ $next_project->event_date->format('d-m-Y H:i') }}
+                        </p>
+                    </div>
+                    <x-project.poster :project="$next_project"/>
+                @else
+                    <h2 class="text-3xl font-bold">{{ __("No Meetups Scheduled") }}</h2>
+                    <p class="text-lg">{{ __("Check back later for more meetups.") }}</p>
+                @endif
+            </div>
         </div>
     </div>
-    @if($featured_project)
-        <div class="bg-gradient-to-b from-amber-800 to-transparent text-white p-4 text-center text-xl">
-            <p class="font-bold">
-                <span>Next meet:</span>
-                @if($next_meetup->isToday() && $next_meetup->isFuture())
-                    <span>{{ __("Today") }}</span>
-                    <span>{{ $next_meetup->diffForHumans() }}</span>
-                    ({{ $next_meetup->format('H:i') }})
-                @else
-                    <span>{{ $next_meetup->format('F jS') }}</span>
+    <div class="p-8 mx-auto container">
+        @foreach($months as $month => $projects)
+            <div>
+                @if($loop->first)
+                    <div class="w-1 h-12 mx-2.5 bg-gray-600 -mt-8 rounded-b"></div>
                 @endif
-            </p>
-            <div class="flex items-center justify-center p-4">
-                <x-project.featured :project="$featured_project"/>
+                <div class="sticky top-20">
+                    <h2 class="text-3xl font-bold">
+                        <span
+                            class="h-6 w-6 bg-gray-50 border-2 border-gray-50 rounded-full inline-block align-middle"></span>
+                        <span class="bg-gray-50 font-display text-black inline-block px-2 py-1 rounded shadow">
+                            {{ $month }}
+                        </span>
+                    </h2>
+                </div>
+                <div class="flex">
+                    <div class="w-1 mx-2.5 bg-gray-600 rounded"></div>
+                    <div class="flex-1">
+                        @foreach($projects as $project)
+                            <x-project.card :project="$project"/>
+                        @endforeach
+                    </div>
+                </div>
             </div>
-        </div>
-    @else
-        <div class="bg-amber-800 container mx-auto h-1">
-        </div>
-    @endif
-    <div class="container mx-auto my-8 text-white">
-        <h2 class="text-3xl font-bold text-center mb-8">
-            Past Sessions
-        </h2>
-        <div class="columns-1 md:columns-2 lg:columns-3 2xl:columns-4">
-            @foreach($projects as $project)
-                <x-project.card :project="$project"
-                                class="w-full inline-block"/>
-            @endforeach
-        </div>
+        @endforeach
     </div>
 @endsection

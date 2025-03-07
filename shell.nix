@@ -7,7 +7,7 @@ pkgs.mkShellNoCC {
   packages = with pkgs; [
     # Dependencies
     nodejs
-    (pkgs.php.buildEnv {
+    (pkgs.php83.buildEnv {
       extensions = ({ enabled, all } : enabled ++ (with all; [
         curl
         xdebug

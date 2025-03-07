@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])
+    ->name('home');
 
 Route::get('/projects/featured', [\App\Http\Controllers\ProjectController::class, 'featured'])
     ->name('projects.featured');

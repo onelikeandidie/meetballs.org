@@ -14,6 +14,7 @@ use Intervention\Image\ImageManager;
  * @property string $description
  * @property int $host_id
  * @property Collection<string> $tags
+ * @property \Carbon\Carbon $event_date
  * @property Host $host
  * @property ProjectLink[] $links
  */
@@ -24,10 +25,12 @@ class Project extends Model
         'description',
         'host_id',
         'tags',
+        'event_date',
     ];
 
     protected $casts = [
         'tags' => 'collection',
+        'event_date' => 'datetime',
     ];
 
     public function host()

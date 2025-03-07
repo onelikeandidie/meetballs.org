@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class HomeController extends Controller
 {
@@ -16,11 +17,25 @@ class HomeController extends Controller
         } else {
             $next_meetup = $now->next('Wednesday')->setTime(19, 0, 0);
         }
-        $projects = Project::all();
+        /** @var Collection<Project> $projects */
+        $projects = Project::query()
+            ->with('host')
+            ->with('links')
+            ->orderBy('event_date', 'desc')
+            ->get();
+        // Chunk them by month with the month name as the key
+        $months = $projects->groupBy(function (Project $project) {
+            return $project->event_date?->format('F Y') ?? 'Unsorted';
+        });
+
+        $next_project = Project::query()
+            ->where('event_date', '>=', now())
+            ->orderBy('event_date')
+            ->first();
         return view('home', [
-            'projects' => $projects,
-            'featured_project' => $projects->first(fn($project) => $project->tags->contains('featured')),
+            'months' => $months,
             'next_meetup' => $next_meetup,
+            'next_project' => $next_project,
         ]);
     }
 }

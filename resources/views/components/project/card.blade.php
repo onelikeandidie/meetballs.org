@@ -1,5 +1,5 @@
 <div {{ $attributes->merge(['class' => 'p-2']) }}>
-    <div class="rounded-lg shadow bg-neutral-800 p-4 space-y-4">
+    <div class="rounded-lg shadow-sm bg-neutral-800  p-2">
         <div class="text-sm text-neutral-400 my-1">
             @foreach($project->tags as $index => $tag)
                 <x-tag class="mb-1 mr-1"
