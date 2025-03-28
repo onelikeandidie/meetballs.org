@@ -55,6 +55,64 @@
     </nav>
     <div class="h-48 md:h-72 bg-white">
     </div>
+    {{-- Show meetup location --}}
+    <div class="bg-white text-black">
+        <p class="p-4 text-center text-2xl font-bold">
+            {{ __("Every Wednesday at IKEA Loulé") }}
+        </p>
+        <div x-data="map({
+                center: [37.0957,-8.0113],
+                zoom: 12
+            }, [
+                {
+                    position: [37.097349, -7.996015],
+                    popup: { message: 'Mar Shopping IKEA', openByDefault: true }
+                }
+            ]
+        )" class="w-full h-96">
+        </div>
+        <div class="container mx-auto flex items-center justify-end gap-4 p-4">
+            <p class="justify-self-start">
+                IKEA, IC 4, Almancil, Loulé, Faro, 8135-185, Portugal 
+            </p>
+            <a href="https://www.openstreetmap.org/way/525348387#map=16/37.09885/-7.99700" title="OpenStreetMap Link"
+                class="hover:text-green-800">
+                <x-si-openstreetmap class="w-8 h-8" />
+            </a>
+            <a href="https://maps.app.goo.gl/1jgN6PStWNfbbX7K7" title="Google Maps Link"
+                class="hover:text-blue-800">
+                <x-si-googlemaps class="w-8 h-8" />
+            </a>
+        </div>
+    </div>
+    {{-- Show off other organisations --}}
+    <div class="p-8 space-y-8">
+        <p class="text-center text-2xl font-bold">
+            Want more?
+        </p>
+        <div class="grid grid-cols-2 md:flex md:flex-row flex-wrap items-center justify-center justify-items-center gap-12">
+            <a href="https://geeksessions.io/" target="_blank" title="Geek Sessions">
+                <img src="images/organisations/geeksessions_logo_white.svg" class="h-24"/>
+            </a>
+            <a href="https://faroemacao.pt/" target="_blank" title="Faro em ação">
+                <div class="px-4 py-6 bg-black rounded-lg inline-block">
+                    <img src="images/organisations/faroemacao_light.svg" class="h-24"/>
+                </div>
+            </a>
+            <a href="https://gdg.community.dev/gdg-faro/" class="text-center" target="_blank" title="Google Developer Group Faro">
+                <img src="images/organisations/gdg_faro_logo_dark.svg" class="w-24" />
+                <span class="mt-4 block">
+                GDG Faro
+                </span>
+            </a>
+            <a href="https://local.foundation/" target="_blank" title="Local Foundation">
+                <img src="images/organisations/localfoundation_light.svg" class="w-48"/>
+            </a>
+        </div>
+        <p class="text-center text-xl">
+            {{ __("Checkout events on our parent and sister organisations") }}
+        </p>
+    </div>
     {{-- Show off the next meetup --}}
     <div class="p-8 bg-white text-black z-10">
         <div class="mx-auto container relative">
