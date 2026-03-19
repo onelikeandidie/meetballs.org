@@ -73,7 +73,7 @@
         </div>
         <div class="container mx-auto flex items-center justify-end gap-4 p-4">
             <p class="justify-self-start">
-                IKEA, IC 4, Almancil, Loulé, Faro, 8135-185, Portugal 
+                IKEA, IC 4, Almancil, Loulé, Faro, 8135-185, Portugal
             </p>
             <a href="https://www.openstreetmap.org/way/525348387#map=16/37.09885/-7.99700" title="OpenStreetMap Link"
                 class="hover:text-green-800">
@@ -146,6 +146,11 @@
         </div>
     </div>
     <div class="p-8 mx-auto container">
+        @can('create', \App\Models\Project::class)
+            <x-forms.button href="{{ route('project.create') }}">
+                {{ __('projects.create') }}
+            </x-forms.button>
+        @endcan
         @foreach($months as $month => $projects)
             <div>
                 @if($loop->first)

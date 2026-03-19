@@ -24,9 +24,9 @@
             <h1>
                 {{ $project->name }}
             </h1>
-            <p>
+            <x-markdown class="prose dark:prose-invert prose-a:text-blue-600 prose-a:underline prose-p:my-1">
                 {{ $project->description }}
-            </p>
+            </x-markdown>
         </article>
         <div class="w-full md:w-[65ch] mx-auto p-2">
             <div class="text-sm text-neutral-200 m-2">
@@ -53,6 +53,11 @@
                     @endforeach
                 </div>
             </div>
+            @can('update', $project)
+                <x-forms.button href="{{ route('project.edit', $project) }}">
+                    {{ __('projects.edit') }}
+                </x-forms.button>
+            @endcan
         </div>
     </div>
 @endsection

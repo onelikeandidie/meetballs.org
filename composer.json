@@ -6,12 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "blade-ui-kit/blade-heroicons": "^2.7",
         "codeat3/blade-simple-icons": "^5.14",
-        "filament/filament": "^3.2",
         "intervention/image": "^3.9",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
-        "ryangjchandler/blade-tabler-icons": "^2.3"
+        "secondnetwork/blade-tabler-icons": "^3.40",
+        "spatie/laravel-markdown": "^2.8"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -40,8 +41,7 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php artisan filament:upgrade"
+            "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"

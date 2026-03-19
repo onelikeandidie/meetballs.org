@@ -42,6 +42,15 @@
     </nav>
 @show
 
+@section('messages')
+    @if(session('success'))
+        <p class="container mx-auto text-green-600">
+            {{ session('success') }}
+        </p>
+    @endif
+    <x-error.messages/>
+@endsection
+
 @yield('content')
 
 @section('footer')
@@ -58,6 +67,10 @@
                     GitHub
                 </a>
             </p>
+            <a href="{{ route('auth.login') }}" class="hover:text-neutral-200">
+                Login
+                <x-tabler-square-arrow-right class="w-6 h-6 inline-block"/>
+            </a>
         </div>
     </footer>
 @show
